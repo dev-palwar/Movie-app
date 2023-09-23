@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(10, 16, 20);
+    color: white;
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    img {
+        border-radius: 5px;
+    }
+}
+
+.app-container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.Anya {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+        width: 30vh;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
+.fa-close {
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 23px;
+}
+
+.no-img {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aquamarine;
+
+    & {
+        font-size: 60px;
+    }
+}
+
+.loader {
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 55vh;
+    }
+}
+
+.load-more {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+
+    & {
+        button {
+            background-color: #982386;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    }
+}
+
+.search-box {
+    margin-top: 20px;
+    position: sticky;
+    top: 5px;
+    z-index: 10;
+
+    #search {
+        width: 100%;
+        border: none;
+        height: 50px;
+        outline: none;
+        margin-bottom: 30px;
+    }
+}
+
+.fa-magnifying-glass {
+    padding: 18px 0px 0 15px;
+    align-self: stretch;
+    background: white;
+    color: black;
+    height: 50px;
+}
+
+.iframe {
+    height: 100%;
+}
+
+.loginBox {
+    height: 74vh;
+    border: 2px solid;
+    width: 60vh;
+    margin: auto;
+}
+
+.wishlist-button {
+    transition: all 0.3s;
+}
+
+.empty-watchlist {
+    opacity: 0.1;
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .dislikeHeart {
+        font-size: 7rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+}

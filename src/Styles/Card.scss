@@ -1,0 +1,80 @@
+.card {
+    width: 27vh;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+
+    .card-image {
+        height: 100%;
+
+        img {
+            width: 100%;
+            display: block;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    /* Overlay style */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out;
+
+        .heart-icon {
+            display: flex;
+            justify-content: end;
+            font-size: 30px;
+            transition: all 0.10s;
+
+            .icon {
+                color: red;
+                transition: all 0.10s;
+                cursor: pointer;
+            }
+        }
+
+        .details {
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: start;
+            gap: 5px;
+
+            :nth-child(3) {
+                text-transform: uppercase;
+                text-align: start;
+                color: chartreuse;
+            }
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 20px;
+            text-align: start;
+        }
+
+        p {
+            text-align: start;
+            margin: 0;
+        }
+
+    }
+
+    /* Hover effect */
+    &:hover {
+        .overlay {
+            opacity: 1;
+        }
+    }
+}

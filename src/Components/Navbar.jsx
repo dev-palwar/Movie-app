@@ -46,7 +46,7 @@ const Navbar = () => {
             </Link>
           ) : (
             <Link to={"login"} className="discover">
-              {url == "login" ? <AiFillHeart /> : <AiOutlineHeart />}
+              {/* {url == "login" ? <AiFillHeart /> : <AiOutlineHeart />} */}
             </Link>
           )}
         </div>

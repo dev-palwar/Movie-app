@@ -14,7 +14,6 @@ import Watchlist from "./Pages/Watchlist";
 
 function App() {
   useEffect(() => {
-    console.log("app comp")
     getUser();
   }, []);
 

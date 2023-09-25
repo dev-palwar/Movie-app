@@ -6,12 +6,11 @@ import {
   AiOutlineFire,
   AiOutlineHeart,
 } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { getUser } from "../utils/Controllers";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const [loggedInUser, setLoggedInUser] = useState({});
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -36,7 +35,7 @@ const Navbar = () => {
         </Link>
         <div className="icons">
           <Link to={"discover/1"} className="discover">
-            {url == "discover" ? <AiFillFire /> : <AiOutlineFire />}
+            {url === "discover" ? <AiFillFire /> : <AiOutlineFire />}
           </Link>
           {user ? (
             <Link to={"/watchlist"}>
@@ -46,7 +45,7 @@ const Navbar = () => {
             </Link>
           ) : (
             <Link to={"login"} className="discover">
-              {/* {url == "login" ? <AiFillHeart /> : <AiOutlineHeart />} */}
+              {url === "login" ? <AiFillHeart /> : <AiOutlineHeart />}
             </Link>
           )}
         </div>

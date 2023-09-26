@@ -8,9 +8,10 @@ import TvDetail from "./Pages/TvDetail";
 import CastDetails from "./Pages/CastDetails";
 import "../src/Styles/Media.scss";
 import Login from "./Pages/Login";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getUser } from "./utils/Controllers";
 import Watchlist from "./Pages/Watchlist";
+import Search from "./Components/Search";
 
 function App() {
   useEffect(() => {
@@ -26,10 +27,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/search/:type" element={<Search />} />
               <Route path="/details_movie/:id" element={<MovieDetails />} />
               <Route path="/details_tv/:id" element={<TvDetail />} />
               <Route path="/details_cast/:id" element={<CastDetails />} />
-              <Route path="/discover/:page" element={<Discover />} />
+              <Route path="/discover" element={<Discover />} />
               <Route path="/watchlist" element={<Watchlist />} />
             </Routes>
           </Router>

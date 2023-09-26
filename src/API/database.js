@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://reelink.onrender.com";
+const BASE_URL = "http://localhost:8000";
 
 const fromDatabase = async (method, endPoint, dataToPost) => {
   try {
@@ -8,7 +8,6 @@ const fromDatabase = async (method, endPoint, dataToPost) => {
       const { data } = await axios.get(`${BASE_URL}${endPoint}`, {
         withCredentials: true,
       });
-      console.log(data);
       return data;
     } else if (method == "POST") {
       const { data } = await axios.post(`${BASE_URL}${endPoint}`, dataToPost, {
@@ -17,7 +16,7 @@ const fromDatabase = async (method, endPoint, dataToPost) => {
       return data;
     }
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Error:", error.message);
     throw error;
   }
 };

@@ -48,7 +48,7 @@
     }
 
     .card {
-        width: 19vh;
+        flex: 0 0 170px;
     }
 }
 
@@ -59,6 +59,9 @@
         width: 120%;
     }
 
+    .card {
+        flex: 0 0 130px;
+    }
     .loggedInUser {
         height: 5vh;
     }

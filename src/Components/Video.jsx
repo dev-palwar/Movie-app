@@ -26,15 +26,12 @@ const Videos = ({ name, id, media_type }) => {
           className="video-caraousel"
           style={{ marginTop: "70px", marginBottom: "60px" }}
         >
-          <h1 style={{ textTransform: "uppercase" }}>{name}</h1>
-          <div
-            className="caraousel"
-            style={{ marginTop: "2px" }}
-          >
+          <div className="caraousel" style={{ marginTop: "2px" }}>
             {data.map((value) => {
               return (
                 <div className="videos" key={value.id}>
                   <img
+                  loading="lazy"
                     style={{ cursor: "pointer" }}
                     src={`https://img.youtube.com/vi/${value.key}/mqdefault.jpg`}
                     alt={value.name}
@@ -43,7 +40,7 @@ const Videos = ({ name, id, media_type }) => {
                       handler();
                     }}
                   />
-                  <h3 style={{fontWeight: "100"}}>{value.name}</h3>
+                  <h3 style={{ fontWeight: "100" }}>{value.name}</h3>
                 </div>
               );
             })}

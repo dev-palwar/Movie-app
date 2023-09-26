@@ -16,7 +16,6 @@ const Caraousel = ({ name, data, media_type }) => {
   return (
     <>
       <div className="caraousel-container">
-        <h1>{name}</h1>
         <button
           className="carousel-button left"
           onClick={() => scrollCarousel("left")}

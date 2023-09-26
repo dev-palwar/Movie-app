@@ -2,32 +2,59 @@ import React, { useEffect, useState } from "react";
 import fetchData from "../API/tmdbApi";
 import Card from "../Components/Card";
 import Loader from "../Components/Loader";
-import { useNavigate, useParams } from "react-router";
 
 const Discover = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [pageNum, setPageNum] = useState(2);
-  const { page } = useParams();
-  const navigate = useNavigate();
+  const [pageNum, setPageNum] = useState(1);
 
-  const handler = () => {
-    setPageNum(pageNum + 1);
-    setLoading(true);
-    navigate(`/discover/${pageNum}`);
+  const scrollHandler = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 1 >=
+      document.documentElement.scrollHeight
+    ) {
+      setPageNum(pageNum + 1);
+    }
   };
 
   useEffect(() => {
     const fetchAndSetData = async () => {
-      const fetchedData = await fetchData({ page: page }, "/discover/movie");
-      setData(fetchedData.results);
-      setLoading(false);
+      if (pageNum === 1) {
+        const fetchedData = await fetchData(
+          { page: pageNum },
+          "/discover/movie"
+        );
+        setData(fetchedData.results);
+        setLoading(false);
+      }
     };
 
     fetchAndSetData();
-  }, [page]);
+  }, [pageNum]);
 
-  document.title = `Page ${page}`;
+  useEffect(() => {
+    if (pageNum > 1) {
+      const fetchMoreData = async () => {
+        const fetchedData = await fetchData(
+          { page: pageNum },
+          "/discover/movie"
+        );
+        setData((prev) => [...prev, ...fetchedData.results]);
+        setLoading(false);
+      };
+
+      fetchMoreData();
+    }
+
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, [pageNum]);
+
+  document.title = `Page ${pageNum} - Featured Movies`;
+
   return (
     <>
       <h1 style={{ fontSize: "4.2rem", marginBottom: "10px" }}>
@@ -48,9 +75,6 @@ const Discover = () => {
             />
           ))
         )}
-        <div className="load-more">
-          <button onClick={handler}>Load more</button>
-        </div>
       </div>
     </>
   );

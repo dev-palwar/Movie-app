@@ -1,6 +1,6 @@
 .card {
-    width: 27vh;
-    height: 100%;
+    // width: 22vh;
+    flex: 0 0 172px;
     overflow: hidden;
     position: relative;
     z-index: 0;
@@ -13,6 +13,12 @@
             display: block;
             height: 100%;
             object-fit: cover;
+            filter: blur(30px);
+            transition: filter 0.5s;
+        }
+
+        img.lazy-loaded {
+            filter: blur(0);
         }
     }
 
@@ -32,9 +38,15 @@
 
         .heart-icon {
             display: flex;
-            justify-content: end;
+            justify-content: space-between;
             font-size: 30px;
             transition: all 0.10s;
+
+            p {
+                text-transform: uppercase;
+                color: lime;
+                font-size: 16px;
+            }
 
             .icon {
                 color: red;
@@ -68,7 +80,6 @@
             text-align: start;
             margin: 0;
         }
-
     }
 
     /* Hover effect */

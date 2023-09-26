@@ -1,0 +1,20 @@
+.loading-skeleton {
+  width: 27vh;
+  height: 40vh;
+  background-color: #4048587d;
+  // border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+
+  /* Fading Animation */
+  // animation: fade 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}

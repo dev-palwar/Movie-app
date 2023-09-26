@@ -6,8 +6,8 @@
     position: sticky;
     top: 0;
     background-color: rgb(10, 16, 20);
-    z-index: 11;
-    height: 10vh;
+    z-index: 10;
+    height: 9vh;
 
     .logo {
         margin-top: -13px;
@@ -38,7 +38,7 @@
 
 .loggedInUser {
     border: 2px solid yellow;
-    height: 7vh;
+    height: 6vh;
     border-radius: 50%;
 
     img {

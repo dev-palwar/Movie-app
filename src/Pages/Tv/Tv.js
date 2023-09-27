@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import fetchData from "../API/tmdbApi";
-import { formatDate } from "../utils/Functions";
-import "../Styles/TvDetails.scss";
-import Videos from "../Components/Video";
-import Caraousel from "../Components/Caraousel";
-import Loader from "../Components/Loader";
-import imdbLogo from "../Assets/imdb logo.png";
+import fetchData from "../../Database/API/tmdbApi";
+import { formatDate } from "../../utils/Functions";
+import "../Tv/TvDetails.scss";
+import Caraousel from "../../Components/Caraousel/Caraousel";
+import Videos from "../../Components/Player/Video";
+import Loader from "../../Components/Loader/Loader";
+import imdbLogo from "../../Assets/imdb logo.png";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addToWatchlist, setWatchlist } from "../utils/Controllers";
+import { addToWatchlist, setWatchlist } from "../../Database/Controllers/Database";
 
-const TvDetail = () => {
+const Tv = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [recommendations, setRecommandations] = useState([]);
@@ -43,13 +43,14 @@ const TvDetail = () => {
       const { cast } = await fetchData("", `/tv/${params.id}/credits`);
       const { imdb_id } = await fetchData("", `/tv/${params.id}/external_ids`);
       const fetchedRecommandations = await fetchData(
-        "",
+        { page: 1 },
         `/tv/${params.id}/recommendations`
       );
       const res = await fetchData(
         { external_source: "imdb_id" },
         `/find/${imdb_id}`
       );
+      console.log(tvData);
       setData(tvData);
       setCast(cast);
       setRating(res.tv_results[0].vote_average);
@@ -73,10 +74,12 @@ const TvDetail = () => {
             <div className="title-info">
               <div id="tv-status">
                 <span style={{ opacity: "0.6" }}>
-                  {formatDate(data.first_air_date)} ⚪{" "}
-                  {data.episode_run_time[0]} mins
+                  {formatDate(data.first_air_date)}
                 </span>
-                <span>{data.seasons.length - 1} Seasons</span>
+                <span>
+                  {data.number_of_seasons}{" "}
+                  {data.number_of_seasons > 1 ? "Seasons" : "Season"}
+                </span>
                 <span>{data.in_production ? "ONGOING" : "AIRED"}</span>
               </div>
               <h1 id="tv-title">{data.name}</h1>
@@ -120,14 +123,16 @@ const TvDetail = () => {
               </div>
             </div>
             <div className="title-image">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                alt=""
-              />
+              <a href={data.homepage}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                  alt=""
+                />
+              </a>
             </div>
           </div>
           <Videos name="Videos" id={params.id} media_type={"tv"} />
-          <div style={{ marginBottom: "90px" }}>
+          <div style={{ marginBottom: "90px"}}>
             {cast.length > 0 && (
               <Caraousel name="Cast" data={cast} media_type={"person"} />
             )}
@@ -145,4 +150,4 @@ const TvDetail = () => {
   );
 };
 
-export default TvDetail;
+export default Tv;

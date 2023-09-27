@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import fetchData from "../API/tmdbApi";
-import Modal from "./Modal";
+import fetchData from "../../Database/API/tmdbApi";
+import Modal from "../Modal/Modal";
+import Card from "../Card/Card";
 
 const Videos = ({ name, id, media_type }) => {
   const [data, setData] = useState([]);
@@ -31,7 +32,7 @@ const Videos = ({ name, id, media_type }) => {
               return (
                 <div className="videos" key={value.id}>
                   <img
-                  loading="lazy"
+                    loading="lazy"
                     style={{ cursor: "pointer" }}
                     src={`https://img.youtube.com/vi/${value.key}/mqdefault.jpg`}
                     alt={value.name}

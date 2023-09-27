@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../Styles/Card.scss";
-import "../Styles/Skeleton.scss";
+import "../Card/Card.scss";
+import "../Skeleton/Skeleton.scss";
 import { Link } from "react-router-dom";
-import { formatDate } from "../utils/Functions";
+import { formatDate } from "../../utils/Functions";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { addToWatchlist, setWatchlist } from "../utils/Controllers";
-import Movie from "../Assets/movie";
+import { addToWatchlist, setWatchlist } from "../../Database/Controllers/Database";
+import Movie from "../../Assets/movie";
 
 const Card = ({ id, image, title, release_date, media_type, character }) => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -74,12 +74,12 @@ const Card = ({ id, image, title, release_date, media_type, character }) => {
             <Link
               to={
                 media_type === "movie"
-                  ? `/details_movie/${id}`
+                  ? `/movie/${id}`
                   : media_type === "tv"
-                  ? `/details_tv/${id}`
+                  ? `/tv/${id}`
                   : media_type === "person"
-                  ? `/details_cast/${id}`
-                  : `/details_tv/${id}`
+                  ? `/cast/${id}`
+                  : `/tv/${id}`
               }
             >
               <div className="details">

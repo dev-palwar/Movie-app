@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../Styles/Modal.scss"
-import Player from "./Player";
+import "../Modal/Modal.scss"
+import Player from "../Player/Player";
 
 function Modal({id, playVideo}) {
   const [modal, setModal] = useState(false);

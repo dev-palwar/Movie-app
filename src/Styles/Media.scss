@@ -47,22 +47,37 @@
         }
     }
 
-    .card {
-        flex: 0 0 170px;
-    }
+
 }
 
 @media screen and (max-width: '580px') {
     .modal-content {
-        padding: 30px;
-        height: 45%;
+        padding: 40px;
+        height: 40%;
         width: 120%;
     }
 
     .card {
         flex: 0 0 130px;
     }
+
     .loggedInUser {
         height: 5vh;
+    }
+
+    .caraousel {
+        .card {
+            flex: 0 0 130px;
+        }
+
+        .videos {
+            img {
+                width: 16rem;
+            }
+
+            h3 {
+                font-size: 15px;
+            }
+        }
     }
 }

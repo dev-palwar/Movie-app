@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MovieDetails from "./Pages/MovieDetails";
+import Movie from "./Pages/Movie/Movie";
 import Home from "./Pages/Home";
-import Navbar from "./Components/Navbar";
-import Discover from "./Pages/Discover";
+import Navbar from "./Components/Navbar/Navbar";
+import Discover from "./Pages/Discover/Discover";
 import "./utils/Functions";
-import TvDetail from "./Pages/TvDetail";
-import CastDetails from "./Pages/CastDetails";
 import "../src/Styles/Media.scss";
-import Login from "./Pages/Login";
+import Login from "./Pages/Login/Login";
 import { useEffect } from "react";
-import { getUser } from "./utils/Controllers";
-import Watchlist from "./Pages/Watchlist";
+import { getUser } from "../src/Database/Controllers/Database";
+import Watchlist from "./Pages/Watchlist/Watchlist";
 import Search from "./Components/Search";
+import Tv from "./Pages/Tv/Tv";
+import Cast from "./Pages/Cast/Cast";
 
 function App() {
   useEffect(() => {
@@ -28,9 +28,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/search/:type" element={<Search />} />
-              <Route path="/details_movie/:id" element={<MovieDetails />} />
-              <Route path="/details_tv/:id" element={<TvDetail />} />
-              <Route path="/details_cast/:id" element={<CastDetails />} />
+              <Route path="/movie/:id" element={<Movie />} />
+              <Route path="/tv/:id" element={<Tv />} />
+              <Route path="/cast/:id" element={<Cast />} />
               <Route path="/discover" element={<Discover />} />
               <Route path="/watchlist" element={<Watchlist />} />
             </Routes>

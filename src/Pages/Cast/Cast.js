@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import fetchData from "../API/tmdbApi";
+import fetchData from "../../Database/API/tmdbApi";
 import { useParams } from "react-router";
-import { formatDate } from "../utils/Functions";
-import Loader from "../Components/Loader";
+import { formatDate } from "../../utils/Functions";
+import Loader from "../../Components/Loader/Loader";
 
-const CastDetails = () => {
+const Cast = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const params = useParams();
@@ -55,4 +55,4 @@ const CastDetails = () => {
   );
 };
 
-export default CastDetails;
+export default Cast;

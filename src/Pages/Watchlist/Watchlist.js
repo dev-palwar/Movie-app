@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getUser } from "../utils/Controllers";
-import Card from "../Components/Card";
+import "../Watchlist/Watchlist.scss"
+import { getUser } from "../../Database/Controllers/Database";
 import { IoMdHeartDislike } from "react-icons/io";
-import Loader from "../Components/Loader";
+import Loader from "../../Components/Loader/Loader";
+import Card from "../../Components/Card/Card";
 
 const Watchlist = () => {
   const [loading, setLoading] = useState(true);

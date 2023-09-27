@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import fetchData from "../API/tmdbApi";
-import Card from "../Components/Card";
-import Loader from "../Components/Loader";
+import fetchData from "../../Database/API/tmdbApi";
+import Loader from "../../Components/Loader/Loader";
+import Card from "../../Components/Card/Card";
 
 const Discover = () => {
   const [data, setData] = useState([]);
@@ -20,11 +20,11 @@ const Discover = () => {
   useEffect(() => {
     const fetchAndSetData = async () => {
       if (pageNum === 1) {
-        const fetchedData = await fetchData(
+        const { results } = await fetchData(
           { page: pageNum },
           "/discover/movie"
         );
-        setData(fetchedData.results);
+        setData(results);
         setLoading(false);
       }
     };

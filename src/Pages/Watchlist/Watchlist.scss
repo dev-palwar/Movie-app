@@ -1,0 +1,18 @@
+.empty-watchlist {
+    opacity: 0.1;
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .dislikeHeart {
+        font-size: 7rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+}

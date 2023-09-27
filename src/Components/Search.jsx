@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import fetchData from "../API/tmdbApi";
-import Card from "./Card";
+import fetchData from "../Database/API/tmdbApi";
+import Card from "./Card/Card";
 import Anya from "../Assets/Anya.png";
 
 const Search = ({ title }) => {

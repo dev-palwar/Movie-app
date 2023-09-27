@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/Login.scss";
+import "../Login/Login.scss";
 
 const Login = () => {
   document.title = "Login";

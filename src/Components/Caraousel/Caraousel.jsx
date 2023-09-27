@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
-import "../Styles/Caraousel.scss";
-import Card from "./Card";
+import "../Caraousel/Caraousel.scss";
+import Card from "../Card/Card";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 const Caraousel = ({ name, data, media_type }) => {
   const carouselRef = useRef(null);
-
   const scrollCarousel = (direction) => {
     if (carouselRef.current) {
       const scrollAmount = direction === "left" ? -1000 : 1000;

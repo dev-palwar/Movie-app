@@ -12,9 +12,6 @@ html::-webkit-scrollbar {
 
 html {
     scrollbar-width: none;
-}
-
-html {
     -ms-overflow-style: none;
 }
 
@@ -26,10 +23,6 @@ body {
     a {
         text-decoration: none;
         color: inherit;
-    }
-
-    img {
-        // border-radius: 5px;
     }
 }
 
@@ -95,26 +88,6 @@ body {
     }
 }
 
-.load-more {
-    display: flex;
-    width: 100%;
-    justify-content: end;
-
-    & {
-        button {
-            background-color: #982386;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-    }
-}
 
 .search-icon {
     height: 50px;
@@ -145,42 +118,4 @@ body {
 
 .iframe {
     height: 100%;
-}
-
-.loginBox {
-    height: 74vh;
-    border: 2px solid;
-    width: 60vh;
-    margin: auto;
-}
-
-.wishlist-button {
-    transition: all 0.3s;
-}
-
-.empty-watchlist {
-    opacity: 0.1;
-    height: 70vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    .dislikeHeart {
-        font-size: 7rem;
-    }
-
-    h3 {
-        font-size: 2rem;
-    }
-}
-
-.notfound {
-    border-radius: 7px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

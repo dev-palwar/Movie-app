@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import "../Styles/MovieDetails.scss";
-import fetchData from "../API/tmdbApi";
-import { formatDate, formatDuration } from "../utils/Functions";
-import Caraousel from "../Components/Caraousel";
-import Videos from "../Components/Video";
-import Loader from "../Components/Loader";
-import imdbLogo from "../Assets/imdb logo.png";
+import "../Movie/MovieDetails.scss";
+import fetchData from "../../Database/API/tmdbApi";
+import { formatDate, formatDuration } from "../../utils/Functions";
+import Videos from "../../Components/Player/Video";
+import Loader from "../../Components/Loader/Loader";
+import Caraousel from "../../Components/Caraousel/Caraousel";
+import imdbLogo from "../../Assets/imdb logo.png";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addToWatchlist, setWatchlist } from "../utils/Controllers";
+import { addToWatchlist, setWatchlist } from "../../Database/Controllers/Database";
 
-const MovieDetails = () => {
+const Movie = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [movie, setMovies] = useState([]);
@@ -108,11 +108,6 @@ const MovieDetails = () => {
                       : () => navigate("/login")
                   }
                 >
-                  <i
-                    className={`fa-${
-                      added ? "solid" : "regular"
-                    } fa-heart solid`}
-                  ></i>{" "}
                   {!added ? "Add to watchlist" : "Remove from watchlist"}
                 </button>
               </div>
@@ -163,4 +158,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default Movie;

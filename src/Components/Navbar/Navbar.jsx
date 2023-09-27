@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Styles/Navbar.scss";
+import "../Navbar/Navbar.scss";
 import {
   AiFillFire,
   AiFillHeart,
@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { getUser } from "../utils/Controllers";
+import { getUser } from "../../Database/Controllers/Database";
 
 const Navbar = () => {
   const navigate = useNavigate();

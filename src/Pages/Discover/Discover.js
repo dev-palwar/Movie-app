@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../Discover/Discover.scss"
 import fetchData from "../../Database/API/tmdbApi";
 import Loader from "../../Components/Loader/Loader";
 import Card from "../../Components/Card/Card";
@@ -57,7 +58,7 @@ const Discover = () => {
 
   return (
     <>
-      <h1 style={{ fontSize: "4.2rem", marginBottom: "10px" }}>
+      <h1>
         Featured movies
       </h1>
       <div className="container">

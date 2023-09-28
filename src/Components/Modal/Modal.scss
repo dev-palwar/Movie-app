@@ -6,7 +6,9 @@ body.active-modal {
     display: block;
     font-size: 18px;
 }
-.modal, .overlay {
+
+.modal,
+.overlay {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -18,8 +20,9 @@ body.active-modal {
 }
 
 .overlay {
-    background: rgba(49,49,49,0.8);
+    background: rgba(49, 49, 49, 0.8);
 }
+
 .modal-content {
     z-index: 15;
     position: absolute;
@@ -40,4 +43,12 @@ body.active-modal {
     top: 10px;
     right: 10px;
     padding: 5px 7px;
+}
+
+@media screen and (max-width: '580px') {
+    .modal-content {
+        padding: 40px;
+        height: 40%;
+        width: 120%;
+    }
 }

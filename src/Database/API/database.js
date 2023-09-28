@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "https://reelink.onrender.com";
+console.log();
+
+const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 
 const fromDatabase = async (method, endPoint, dataToPost) => {
   try {

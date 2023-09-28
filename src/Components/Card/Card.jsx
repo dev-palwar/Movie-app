@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../Card/Card.scss";
-import "../Skeleton/Skeleton.scss";
+import "../../Styles/Skeleton.scss";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/Functions";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { addToWatchlist, setWatchlist } from "../../Database/Controllers/Database";
+import { addToWatchlist, setWatchlist, } from "../../Database/Controllers/Database";
 import Movie from "../../Assets/movie";
 
 const Card = ({ id, image, title, release_date, media_type, character }) => {

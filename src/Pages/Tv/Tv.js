@@ -1,39 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import fetchData from "../../Database/API/tmdbApi";
-import { formatDate } from "../../utils/Functions";
-import "../Tv/TvDetails.scss";
 import Caraousel from "../../Components/Caraousel/Caraousel";
 import Videos from "../../Components/Player/Video";
 import Loader from "../../Components/Loader/Loader";
-import imdbLogo from "../../Assets/imdb logo.png";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addToWatchlist, setWatchlist } from "../../Database/Controllers/Database";
+import Details from "../../Components/Details/Details";
 
 const Tv = () => {
-  const navigate = useNavigate();
   const params = useParams();
   const [recommendations, setRecommandations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const [cast, setCast] = useState({});
   const [ratings, setRating] = useState();
-  const [added, makeAdded] = useState();
-  const user = JSON.parse(localStorage.getItem("user"));
-
-  if (user) {
-    (async () => {
-      makeAdded(await setWatchlist(data.id));
-    })();
-  }
-
-  const dataToPost = {
-    id: data.id,
-    name: data.name,
-    image: data.poster_path,
-    media_type: "show",
-  };
 
   useEffect(() => {
     setLoading(true);
@@ -50,7 +31,6 @@ const Tv = () => {
         { external_source: "imdb_id" },
         `/find/${imdb_id}`
       );
-      console.log(tvData);
       setData(tvData);
       setCast(cast);
       setRating(res.tv_results[0].vote_average);
@@ -70,69 +50,9 @@ const Tv = () => {
       ) : (
         <div className="details-page">
           <ToastContainer />
-          <div className="display-flex-row">
-            <div className="title-info">
-              <div id="tv-status">
-                <span style={{ opacity: "0.6" }}>
-                  {formatDate(data.first_air_date)}
-                </span>
-                <span>
-                  {data.number_of_seasons}{" "}
-                  {data.number_of_seasons > 1 ? "Seasons" : "Season"}
-                </span>
-                <span>{data.in_production ? "ONGOING" : "AIRED"}</span>
-              </div>
-              <h1 id="tv-title">{data.name}</h1>
-              <div className="button-group">
-                <div className="imdb-box">
-                  <img src={imdbLogo} alt="IMDB" />
-                  <h2>{ratings}/10</h2>
-                </div>
-                <button
-                  style={{ background: added ? "purple" : "" }}
-                  className="wishlist-button"
-                  onClick={
-                    user
-                      ? async () => makeAdded(await addToWatchlist(dataToPost))
-                      : () => navigate("/login")
-                  }
-                >
-                  <i
-                    className={`fa-${
-                      added ? "solid" : "regular"
-                    } fa-heart solid`}
-                  ></i>{" "}
-                  {!added ? "Add to watchlist" : "Remove from watchlist"}
-                </button>
-              </div>
-              <h3>
-                {data.genres.map((value) => {
-                  return (
-                    <span
-                      key={value.id}
-                      style={{ marginRight: "10px", color: "aquamarine" }}
-                    >
-                      {value.name}
-                    </span>
-                  );
-                })}
-              </h3>
-              <div className="desc">
-                <h3>Plot:</h3>
-                <p>{data.overview}</p>
-              </div>
-            </div>
-            <div className="title-image">
-              <a href={data.homepage}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
+          <Details data={data} ratings={ratings} />
           <Videos name="Videos" id={params.id} media_type={"tv"} />
-          <div style={{ marginBottom: "90px"}}>
+          <div style={{ marginBottom: "90px" }}>
             {cast.length > 0 && (
               <Caraousel name="Cast" data={cast} media_type={"person"} />
             )}

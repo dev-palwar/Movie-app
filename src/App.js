@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Movie from "./Pages/Movie/Movie";
-import Home from "./Pages/Home";
+import Home from "../src/Pages/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Discover from "./Pages/Discover/Discover";
 import "./utils/Functions";
-import "../src/Styles/Media.scss";
 import Login from "./Pages/Login/Login";
 import { useEffect } from "react";
 import { getUser } from "../src/Database/Controllers/Database";

@@ -89,10 +89,45 @@
         }
     }
 }
+
 .notfound {
     border-radius: 7px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: '580px') {
+    .card {
+        flex: 0 0 155px;
+
+        .overlay {
+            h3 {
+                font-size: 15px;
+            }
+
+            .heart-icon {
+                p {
+                    font-size: 12px;
+                }
+
+                .icon {
+                    font-size: 23px;
+                }
+
+            }
+
+            p {
+                // display: none;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: '380px') {
+    .card {
+        flex: 0 0 40vw;
+    }
 }

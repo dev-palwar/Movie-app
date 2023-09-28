@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fetchData from "../../Database/API/tmdbApi";
 import Modal from "../Modal/Modal";
-import Card from "../Card/Card";
 
 const Videos = ({ name, id, media_type }) => {
   const [data, setData] = useState([]);
@@ -37,7 +36,7 @@ const Videos = ({ name, id, media_type }) => {
                     src={`https://img.youtube.com/vi/${value.key}/mqdefault.jpg`}
                     alt={value.name}
                     onClick={() => {
-                      setVideoId(value.key);
+                      setVideoId(value.keyy);
                       handler();
                     }}
                   />

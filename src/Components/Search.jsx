@@ -67,7 +67,7 @@ const Search = ({ title }) => {
       ) : (
         <div className="Anya">
           <img src={Anya} alt="" />
-          <h2>You can search anything above...</h2>
+          <h2>Press '/' to search</h2>
         </div>
       )}
     </div>

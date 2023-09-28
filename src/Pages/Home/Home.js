@@ -1,10 +1,20 @@
 import React, { useState } from "react";
-import Search from "../Components/Search";
-import BsSearch from "react-icons/bs";
+import "../Home/home.scss";
+import Search from "../../Components/Search";
 import { ImSearch } from "react-icons/im";
 
 const Home = () => {
   const [search, setSearch] = useState();
+
+  function focusOnSearch(e) {
+    if (e.key === "/" && e.target.tagName !== "INPUT") {
+      document.getElementById("search").focus();
+      e.preventDefault(); 
+    }
+  }
+  
+  window.addEventListener("keydown", focusOnSearch);
+  
 
   const handler = (e) => {
     setSearch(e.target.value);

@@ -1,13 +1,13 @@
 .loading-skeleton {
   width: 27vh;
-  height: 35vh;
+  height: 33vh;
   background-color: #4048587d;
   // border-radius: 8px;
   position: relative;
   overflow: hidden;
 
   /* Fading Animation */
-  // animation: fade 1.5s infinite alternate ease-in-out;
+  animation: fade 1.5s infinite alternate ease-in-out;
 }
 
 @keyframes fade {

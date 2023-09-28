@@ -5,7 +5,7 @@ const Login = () => {
   document.title = "Login";
   return (
     <>
-      <a href="https://reelink.onrender.com/authRoute/callBack">
+      <a href={process.env.REACT_APP_BACKEND_AUTH}>
         <div className="google-btn">
           <div className="google-icon-wrapper">
             <img

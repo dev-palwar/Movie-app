@@ -32,7 +32,7 @@ const Navbar = () => {
       <ToastContainer />
       <div className="navbar">
         <Link to={"/"}>
-          <div className="logo"></div>
+          <div className="logo">🍿</div>
         </Link>
         <div className="icons">
           <Link to={"discover"} className="discover">

@@ -27,7 +27,7 @@ const Cast = () => {
       ) : (
         <>
           <div className="details-page">
-            <div className="display-flex-row">
+            <div className="details">
               <div className="title-info">
                 <div>
                   <span style={{ opacity: "0.5", marginRight: "20px" }}>

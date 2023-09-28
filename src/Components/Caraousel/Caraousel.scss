@@ -58,3 +58,22 @@
         display: none;
     }
 }
+
+@media screen and (max-width: '580px') {
+    .caraousel {
+        .card {
+            flex: 0 0 155px;
+
+        }
+
+        .videos {
+            img {
+                width: 16rem;
+            }
+
+            h3 {
+                font-size: 15px;
+            }
+        }
+    }
+}

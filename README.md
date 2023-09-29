@@ -12,9 +12,9 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your syst
 ### Installation
 
 Clone the repository to your local machine:  
--cd movie-react-app  
--npm install  
--npm start  
+- cd movie-react-app  
+- npm install  
+- npm start  
 After Installation, you need to set up some environment variables, so make a .env file in the root directory. You'll need 3 variables  
 1. REACT_APP_TMDB_TOKEN  
 2. REACT_APP_BACKEND_URL  

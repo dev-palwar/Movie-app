@@ -2,7 +2,7 @@
 # A React Movies App 🍿 
 
 This is a simple React application that fetches movie data from an API and displays movie details.
-This app was done for educational purposes, The style is based on [vitordino's](URhttps://movies.vitordino.com) design. 
+This app was done for educational purposes, The style is based on [vitordino's](https://movies.vitordino.com) design. 
 
 
 ### Prerequisites

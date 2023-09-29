@@ -18,8 +18,10 @@ Clone the repository to your local machine:
   
 > After Installation, you need to set up some environment variables, so make a .env file in the root directory. You'll need 3 variables  
 ````
-1. REACT_APP_TMDB_TOKEN     # Your Api key 
-2. REACT_APP_BACKEND_URL    # For local machine it is "http://localhost:8000"
+1. REACT_APP_TMDB_TOKEN     # Your Api key
+
+// These are not necessary. Only use if the backend is configured
+2. REACT_APP_BACKEND_URL    # For local machine it is "http://localhost:your-port"
 3. REACT_APP_BACKEND_AUTH   # Whatever you configure in google console
 ````
 

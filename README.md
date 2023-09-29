@@ -14,11 +14,14 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your syst
 Clone the repository to your local machine:  
 - cd movie-react-app  
 - npm install  
-- npm start  
-After Installation, you need to set up some environment variables, so make a .env file in the root directory. You'll need 3 variables  
-1. REACT_APP_TMDB_TOKEN  
-2. REACT_APP_BACKEND_URL  
-3. REACT_APP_BACKEND_AUTH
+- npm start
+  
+> After Installation, you need to set up some environment variables, so make a .env file in the root directory. You'll need 3 variables  
+````
+1. REACT_APP_TMDB_TOKEN     # Your Api key 
+2. REACT_APP_BACKEND_URL    # For local machine it is "http://localhost:8000"
+3. REACT_APP_BACKEND_AUTH   # Whatever you configure in google console
+````
 
 ## API
 
@@ -36,3 +39,5 @@ _Create a new branch for your feature or bug fix
 _Make your changes and commit them   
 _Push to your branch    
 _Create a pull request  
+
+> If you have any other questions or need further assistance, feel free to reach out to me on Twitter [@dev_palwar2](https://twitter.com/dev_palwar2).

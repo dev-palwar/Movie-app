@@ -27,7 +27,7 @@ Clone the repository to your local machine:
 
 ## API
 
-This project uses The Movie Database (TMDb) API to fetch movie data. You will need to sign up for an API key and replace it in the .env file.  
+This project uses The Movie Database [(TMDb)](https://developer.themoviedb.org/docs/getting-started) API to fetch movie data. You will need to sign up for an API key and replace it in the .env file.  
 
 ## Backend  
 The Backend of this App can be found [here](https://github.com/dev-palwar/reelink-backend). So follow the README file for backend setup

@@ -9,15 +9,15 @@ const Home = () => {
   function focusOnSearch(e) {
     if (e.key === "/" && e.target.tagName !== "INPUT") {
       document.getElementById("search").focus();
-      e.preventDefault(); 
+      e.preventDefault();
     }
   }
-  
+
   window.addEventListener("keydown", focusOnSearch);
-  
 
   const handler = (e) => {
     setSearch(e.target.value);
+    localStorage.setItem("search", e.target.value);
   };
   document.title = "Home";
 
@@ -34,9 +34,10 @@ const Home = () => {
             name="search"
             id="search"
             onChange={handler}
+            value={localStorage.getItem("search") || search}
           />
         </div>
-        <Search title={search} />
+        <Search title={search || localStorage.getItem("search")} />
       </div>
     </>
   );

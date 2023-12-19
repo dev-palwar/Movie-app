@@ -15,6 +15,7 @@ const Search = ({ title }) => {
       document.documentElement.scrollHeight
     ) {
       setPageNum(pageNum + 1);
+      localStorage.setItem("page_num", pageNum);
     }
   };
 
@@ -33,7 +34,10 @@ const Search = ({ title }) => {
     if (pageNum > 1) {
       const fetchMoreData = async () => {
         const fetchedData = await fetchData(
-          { query: title, page: pageNum },
+          {
+            query: localStorage.getItem("search"),
+            page: localStorage.getItem("page_num"),
+          },
           "/search/multi"
         );
         setData((prev) => [...prev, ...fetchedData.results]);
@@ -48,7 +52,7 @@ const Search = ({ title }) => {
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, [pageNum]);
+  }, [pageNum, localStorage.getItem("page_num")]);
 
   return (
     <div className="container">

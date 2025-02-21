@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "../Home/home.scss";
 import Search from "../../Components/Search";
 import { ImSearch } from "react-icons/im";
+import { useDebounce } from "../../hooks/debounce";
 
 const Home = () => {
-  const [search, setSearch] = useState();
+  const [searchQuery, setSearchQuery] = useState();
+  const debouncedQuery = useDebounce(searchQuery, 2000);
 
   function focusOnSearch(e) {
     if (e.key === "/" && e.target.tagName !== "INPUT") {
@@ -16,9 +18,11 @@ const Home = () => {
   window.addEventListener("keydown", focusOnSearch);
 
   const handler = (e) => {
-    setSearch(e.target.value);
-    localStorage.setItem("search", e.target.value);
+    const value = e.target.value;
+    setSearchQuery(value);
+    localStorage.setItem("search", debouncedQuery);
   };
+
   document.title = "Home";
 
   return (
@@ -34,10 +38,10 @@ const Home = () => {
             name="search"
             id="search"
             onChange={handler}
-            value={localStorage.getItem("search") || search}
+            value={searchQuery}
           />
         </div>
-        <Search title={search || localStorage.getItem("search")} />
+        <Search title={debouncedQuery} />
       </div>
     </>
   );

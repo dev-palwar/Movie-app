@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Discover/Discover.scss"
+import "../Discover/Discover.scss";
 import fetchData from "../../Database/API/tmdbApi";
 import Loader from "../../Components/Loader/Loader";
 import Card from "../../Components/Card/Card";
@@ -58,9 +58,7 @@ const Discover = () => {
 
   return (
     <>
-      <h1>
-        Featured movies
-      </h1>
+      <h1>Featured movies</h1>
       <div className="container">
         {loading ? (
           <Loader />

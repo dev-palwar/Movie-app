@@ -72,6 +72,19 @@ const Search = ({ title }) => {
         <div className="Anya">
           <img src={Anya} alt="" />
           <h2>Press '/' to search</h2>
+          <p
+            style={{
+              position: "absolute",
+              bottom: 0,
+              marginBottom: "1rem",
+              textAlign: "center",
+              lineHeight: "1rem",
+              fontSize: "12px"
+            }}
+          >
+            You may need to connect through a VPN depending on your location, as
+            the API may be restricted or unavailable in certain countries.
+          </p>
         </div>
       )}
     </div>
